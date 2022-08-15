@@ -33,50 +33,50 @@ import java.util.Collections.shuffle
        
 */
 
+val colorMap = mapOf (
+    "normal" to Color.Blue,
+    "game" to Color.Green,
+    "virus" to Color.Yellow,
+    "bottoms_up" to Color.Red,
+    "punishment" to Color.Black,
+    "spicy" to Color.Magenta
+)
+
 @Composable
 fun Game(state: AppState) {
 
     var currPrompt by remember { mutableStateOf(Prompt()) }
     var currIdx by remember { mutableStateOf(0)}
 
-    //shuffle(deck!!.prompts)
     currPrompt = state.currentDeck.prompts[currIdx]
 
     val modifier = Modifier
         .fillMaxSize()
         .clickable { currIdx++ }
-    when (currPrompt.type) {
-        //TODO rest of cards
-        "normal" -> NormalPrompt(currPrompt, state.players, modifier)
-        "bottoms up" -> BottomsUpPrompt(currPrompt, state.players, modifier)
-        else -> Text(currPrompt.type)
-    }
-
-
+    PromptScreen(currPrompt, state.players, modifier)
 }
 
 
-// need to setup queue so it loads before tap
+// TODO need to setup queue so it loads before tap
 fun formatPrompt(p: Prompt, players: MutableList<String>): String {
-    val targetList = players.shuffled().subList(0, p.numTargets)
-    return p.prompt.format(*targetList.toTypedArray())
-}
-
-@Composable
-fun NormalPrompt(p : Prompt, players : MutableList<String>, modifier: Modifier) {
-    Box(modifier = modifier.background(Color.Blue))
-    Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
-        Text(text = p.type, textAlign = TextAlign.Center, fontSize = 30.sp, color = Color.White)
-        Text(text = formatPrompt(p, players), textAlign = TextAlign.Center, fontSize = 18.sp,  color = Color.White)
+    return if (players.isNotEmpty()) {
+        val targetList = players.shuffled().subList(0, p.numTargets)
+        p.prompt.format(*targetList.toTypedArray())
+    } else {
+        p.prompt
     }
-
 }
 
-
 @Composable
-fun BottomsUpPrompt(p : Prompt, players : MutableList<String>, modifier: Modifier) {
-    Box(modifier = modifier)
-    Text(text = p.prompt)
+fun PromptScreen(p : Prompt, players : MutableList<String>, modifier: Modifier) {
+    Box(modifier = modifier.background(colorMap.getOrDefault(p.type, Color.Blue)), contentAlignment = Alignment.Center) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Center) {
+            if (p.type != "normal") Text(text = p.type, textAlign = TextAlign.Center, fontSize = 30.sp, color = Color.White)
+            Text(text = formatPrompt(p, players), textAlign = TextAlign.Center, fontSize = 18.sp,  color = Color.White)
+        }
+    }
+    //TODO add secondary cards
+
 }
 
 fun getJsonDataFromAsset(context: Context, fileName: String): String? {

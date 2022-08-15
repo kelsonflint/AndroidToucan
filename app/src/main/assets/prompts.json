@@ -60,12 +60,12 @@
         "prompt": "If you can lick your elbow, give out 100 sips"
       },
       {
-        "type": "bottoms up",
+        "type": "bottoms_up",
         "numTargets": 0,
         "prompt": "People with an S in your first name, let's down it all!"
       },
       {
-        "type": "bottoms up",
+        "type": "bottoms_up",
         "numTargets": 0,
         "prompt": "Whoever is playing music, kill your drink"
       },
@@ -240,7 +240,7 @@
         "prompt": "Would you rather live without coffee or without chocolate? Vote at the same time, losers must drink 2 sips"
       },
       {
-        "type": "bottoms up",
+        "type": "bottoms_up",
         "numTargets": 0,
         "prompt": "Down your drink if you're a redhead"
       },
@@ -469,12 +469,12 @@
         "prompt": "%s, tell a joke or drink 4 times"
       },
       {
-        "type": "bottoms up",
+        "type": "bottoms_up",
         "numTargets": 0,
         "prompt": "Race for the heavyweight title! Down your drink if you weight more than 180 pounds"
       },
       {
-        "type": "bottoms up",
+        "type": "bottoms_up",
         "numTargets": 1,
         "prompt": "Aroound the room, recite the alphabet one letter at at time. If %s finishes their drink before the end of the alphabet, everyone has to down their drinks"
       },
@@ -851,12 +851,12 @@
         "prompt": "'Classical Composers' , first person to repeat themselves or can't think of anything drinks 2 times. %s, you start"
       },
       {
-        "type": "bottoms up",
+        "type": "bottoms_up",
         "numTargets": 0,
         "prompt": "If you're on your phone right now, finish your drink!"
       },
       {
-        "type": "bottoms up",
+        "type": "bottoms_up",
         "numTargets": 0,
         "prompt": "If you've ever killed the Ender Dragon in minecraft, it's time for you to kill your drink!"
       }
@@ -864,8 +864,8 @@
   },
   {
     "id": 3,
-    "name": "Ardente",
-    "description": "fiery",
+    "name": "Spicy",
+    "description": "Spicy",
     "prompts": [
       {
         "type": "normal",
@@ -945,7 +945,7 @@
         "prompt": "%s, choose someone to put their hand in your panties. 4 sips in case of refusal"
       },
       {
-        "type": "ardente",
+        "type": "spicy",
         "numTargets": 2,
         "prompt": "%s, finish your drink and pretend to make %s c*m with your mouth"
       },
@@ -1215,12 +1215,12 @@
         "prompt": "Guys, take off a piece of clothing or drink 2 times"
       },
       {
-        "type": "ardente",
+        "type": "spicy",
         "numTargets": 1,
         "prompt": "%s, choose someone to play with. Both of you take a swig and then kiss, until one of you empties their drink..."
       },
       {
-        "type": "ardente",
+        "type": "spicy",
         "numTargets": 2,
         "prompt": "%s, swap tops with %s"
       },
@@ -1277,7 +1277,7 @@
         "prompt": "Drink 2 times if you would sleep with the person to your right."
       },
       {
-        "type": "ardente",
+        "type": "spicy",
         "numTargets": 2,
         "prompt": "%s take a body shot off of %s"
       },
@@ -1323,7 +1323,7 @@
         "prompt": "Everyone, take a drink for each one night stand you've had!"
       },
       {
-        "type": "ardente",
+        "type": "spicy",
         "numTargets": 1,
         "prompt": "%s, fake an orgasm!"
       },
@@ -1340,7 +1340,7 @@
       {
         "type": "normal",
         "numTargets": 0,
-        "prompt": "Ardente! Everyone drinks"
+        "prompt": "Caliente! Everyone drinks"
       }
     ]
   }

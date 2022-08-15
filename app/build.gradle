@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.androidtoucan"
-        minSdk 21
+        minSdk 24
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -62,5 +62,6 @@ dependencies {
     implementation "androidx.navigation:navigation-compose:$nav_version"
     implementation "org.reduxkotlin:redux-kotlin-threadsafe-jvm:0.5.5"
     implementation 'com.google.code.gson:gson:2.8.5'
+    implementation "com.google.accompanist:accompanist-flowlayout:0.23.0"
 
 }

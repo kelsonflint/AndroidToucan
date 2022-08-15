@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
@@ -30,8 +31,7 @@ class MainActivity : ComponentActivity() {
     fun getDecks(): List<Deck> {
         val gson = Gson()
         val str = getJsonDataFromAsset(this.applicationContext, "prompts.json")
-        println("GET DECKS")
-        return gson.fromJson<List<Deck>?>(str, object : TypeToken<List<Deck>>() {}.type).shuffled()
+        return gson.fromJson(str, object : TypeToken<List<Deck>>() {}.type)
     }
 
     override fun onDestroy() {
@@ -46,7 +46,7 @@ fun mainApp(decks: List<Deck>) {
         val state = rememberAppState(navController, decks)
 
         // A surface container using the 'background' color from the theme
-        Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
+        Surface(modifier = Modifier.fillMaxSize().fillMaxWidth(), color = MaterialTheme.colors.background) {
             NavHost(navController = navController, startDestination = "menu") {
                 composable("menu") { MainMenuScreen(state) }
                 composable("deckList") { DeckList(state) }
